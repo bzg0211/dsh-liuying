@@ -1,4 +1,4 @@
-# 输出与临时文件
+﻿# 输出与临时文件
 out/
 *.wav
 *.mp3
@@ -15,3 +15,6 @@ __pycache__/
 # 本地设置（用户自己填的路径，不应提交）
 settings.local.json
 apply.log
+
+# 音色模型（体积大，不进仓库）
+models/
