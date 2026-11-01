@@ -1,0 +1,6 @@
+# dsh-liuying-voice bundle patch: insert the host row into the composition.
+# 模型 / 音色 / 路径在插件设置里配置（存储于 $DSH_HOME/liuying-voice/），
+# 也可在 profile 的 cordis.patch.yml 里覆盖。
+- insert:
+    - id: liuying-voice
+      name: dsh-liuying-voice

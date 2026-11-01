@@ -1,0 +1,17 @@
+# 输出与临时文件
+out/
+*.wav
+*.mp3
+*.log
+
+# 依赖
+node_modules/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# 本地设置（用户自己填的路径，不应提交）
+settings.local.json
+apply.log

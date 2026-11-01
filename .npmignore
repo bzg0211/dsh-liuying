@@ -1,0 +1,12 @@
+# 运行时产物与本地文件
+__pycache__/
+*.pyc
+out/
+apply.log
+*.log
+*.tgz
+*.wav
+*.mp3
+
+# 音色模型不进发布包（体积大、版权归作者）
+models/
