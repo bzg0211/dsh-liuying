@@ -51,7 +51,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USER/dsh-liuying-voice.git"
+    "url": "git+https://github.com/bzg0211/dsh-liuying.git"
   },
   "scripts": {
     "test": "node --test test/*.test.js"
