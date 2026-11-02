@@ -1,4 +1,4 @@
-"""常驻 RVC 推理进程（Applio core）。
+﻿"""常驻 RVC 推理进程（Applio core）。
 
 启动时加载一次依赖与模型缓存，之后每条朗读只做推理本身，
 省掉每次 5~8 秒的进程启动和模型加载。
@@ -48,7 +48,7 @@ def handle(req):
         output_path=req["output"],
         pth_path=req["pth"],
         index_path=req.get("index") or "",
-        split_audio=False,
+        split_audio=bool(req.get("split_audio", False)),
         f0_autotune=False,
         f0_autotune_strength=1.0,
         proposed_pitch=False,

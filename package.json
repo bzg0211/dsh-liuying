@@ -1,6 +1,6 @@
 {
   "name": "dsh-liuying-voice",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "流萤语音插件 for DeepSeek Harness：本地 edge-tts + RVC 音色转换，让 agent 用「流萤」的声音说话。开源 MIT；RVC 模型需用户自备。",
   "keywords": [
     "deepseek-harness",
