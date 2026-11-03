@@ -107,6 +107,11 @@ python scripts/voice-watch.py
 
 桥接侧的「文字 / 语音」发送比例会读本插件的 `sendMode` / `voiceRatio` 设置。
 
+## QQ 链路守护
+
+插件每 60 秒检查一次 **SnowLuma（5099）** 和 **桥接（3100）**，不在就按设置里的路径拉起来；
+DSH 端口变了会自动同步到桥接的 config.json。设置页可开关，或填自己的路径。
+
 ## 记忆资料
 
 `memory/` 里是流萤的设定与剧情资料（firefly-lore / firefly-stories / penacony 系列），供人设使用时参考：
