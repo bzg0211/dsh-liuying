@@ -1,5 +1,12 @@
 ﻿# Changelog
 
+## 0.1.9
+
+- TTS 失败自动重建常驻进程重试（最多 3 次），再退回命令行；CLI 失败原因写入 apply.log
+- 插件拉起的 SnowLuma / 桥接日志写入 sl-out.log / bridge.log（原来被丢弃）
+- 已知问题：某些环境下 DSH 进程内 spawn 的 python 无法完成 edge-tts（NoAudioReceived），
+  页面朗读会失败；外部进程（桥接、shell）里同一个 venv 正常
+
 ## 0.1.8
 
 - 插件内置 QQ 链路守护（lib/qq-guard.js）：每 60 秒检查 SnowLuma(5099) 与桥接(3100)，不在就拉起

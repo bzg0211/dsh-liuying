@@ -1,4 +1,4 @@
-﻿"""常驻 RVC 推理进程（Applio core）。
+"""常驻 RVC 推理进程（Applio core）。
 
 启动时加载一次依赖与模型缓存，之后每条朗读只做推理本身，
 省掉每次 5~8 秒的进程启动和模型加载。
@@ -20,6 +20,29 @@ import traceback
 _APPLIO = os.environ.get("APPLIO_DIR") or os.getcwd()
 if _APPLIO and _APPLIO not in sys.path:
     sys.path.insert(0, _APPLIO)
+
+
+def _net_selftest():
+    """DSH 里 spawn 的 python 到底能不能连外网：结果写 apply.log。"""
+    import time as _t
+    import urllib.request as _u
+
+    log = r"D:\dk\liuying-voice\apply.log"
+    for host in ("https://speech.platform.bing.com", "https://www.baidu.com"):
+        try:
+            t0 = _t.time()
+            _u.urlopen(host, timeout=6)
+            with open(log, "a", encoding="utf-8") as f:
+                f.write(f"worker net OK {host} {_t.time()-t0:.1f}s\n")
+        except Exception as e:
+            with open(log, "a", encoding="utf-8") as f:
+                f.write(f"worker net FAIL {host}: {type(e).__name__} {str(e)[:120]}\n")
+
+
+try:
+    _net_selftest()
+except Exception:
+    pass
 
 from core import run_infer_script
 
